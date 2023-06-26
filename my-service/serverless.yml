@@ -1,0 +1,24 @@
+service: my-service
+
+provider:
+  name: google
+  runtime: nodejs14
+  project: arsh-sandbox
+  region: us-central1
+
+functions:
+  my-function:
+    handler: handler
+    events:
+      - http: path
+
+plugins:
+  - serverless-google-cloudfunctions
+
+# Cloud Code configuration
+google:
+  project: arsh-sandbox
+  region: us-central1
+  runtime: nodejs14
+  entryPoint: copilot
+
