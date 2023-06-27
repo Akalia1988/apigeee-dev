@@ -12,6 +12,21 @@ functions:
     events:
       - http: path
 
+# Add a new event for Cloud Scheduler
+# This event will trigger the function once a month
+# at 12:00 AM on the first day of the month
+# in the UTC timezone
+  scheduler:
+    type: gcp-cloudscheduler
+    schedule: '0 0 1 * *'
+    timeZone: UTC
+    retryConfig:
+      retryCount: 3
+      minBackoffDuration: 5s
+      maxBackoffDuration: 30s
+      maxDoublings: 3
+    targetService: my-function
+    
 plugins:
   - serverless-google-cloudfunctions
 
