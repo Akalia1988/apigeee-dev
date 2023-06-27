@@ -26,10 +26,10 @@ functions:
       maxBackoffDuration: 30s
       maxDoublings: 3
     targetService: my-function
-    handler: my-function
+    handler: handler
     events:
       - http: path
-
+    
 plugins:
   - serverless-google-cloudfunctions
 
@@ -39,4 +39,3 @@ google:
   region: us-central1
   runtime: nodejs14
   entryPoint: copilot
-
