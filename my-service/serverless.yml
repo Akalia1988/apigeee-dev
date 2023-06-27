@@ -26,7 +26,10 @@ functions:
       maxBackoffDuration: 30s
       maxDoublings: 3
     targetService: my-function
-    
+    handler: my-function
+    events:
+      - http: path
+
 plugins:
   - serverless-google-cloudfunctions
 
