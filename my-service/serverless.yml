@@ -3,7 +3,7 @@ service: my-service
 provider:
   name: google
   runtime: nodejs14
-  project: arsh-sandbox
+  project: xxxx
   region: us-central1
 
 functions:
@@ -35,7 +35,7 @@ plugins:
 
 # Cloud Code configuration
 google:
-  project: arsh-sandbox
+  project: xxxx
   region: us-central1
   runtime: nodejs14
-  entryPoint: copilot
+  entryPoint: co
